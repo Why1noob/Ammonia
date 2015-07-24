@@ -4,3 +4,9 @@ C:\projects\ToDoCalendar\Ammonia\Ammonia\bin\Ammonia.pdb
 C:\projects\ToDoCalendar\Ammonia\Ammonia\obj\Debug\Ammonia.csprojResolveAssemblyReference.cache
 C:\projects\ToDoCalendar\Ammonia\Ammonia\obj\Debug\Ammonia.dll
 C:\projects\ToDoCalendar\Ammonia\Ammonia\obj\Debug\Ammonia.pdb
+C:\projects\Ammonia\Ammonia\bin\Ammonia.dll.config
+C:\projects\Ammonia\Ammonia\bin\Ammonia.dll
+C:\projects\Ammonia\Ammonia\bin\Ammonia.pdb
+C:\projects\Ammonia\Ammonia\obj\Debug\Ammonia.csprojResolveAssemblyReference.cache
+C:\projects\Ammonia\Ammonia\obj\Debug\Ammonia.dll
+C:\projects\Ammonia\Ammonia\obj\Debug\Ammonia.pdb

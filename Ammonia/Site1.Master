@@ -23,9 +23,17 @@
             <h1 class="col-md-8 text-center">Сайт группы "Аммиак-34"</h1>
             <div class="col-md-2 bordered">
                 <form id="logInForm" runat="server" method="post">
+                    <asp:ScriptManager ID="sm1" runat="server">
+                        <Scripts>
+                        <asp:ScriptReference Name="jquery"/>
+                        </Scripts>
+                    </asp:ScriptManager>
                     <asp:Label ID="accInfo" runat="server" Visible="False">%user</asp:Label><br/>
-                    <asp:Label id="loginLabel" runat="server">Логин</asp:Label><asp:TextBox id="textLogin" runat="server" style="color: black" CausesValidation="True"/>
+                    <asp:Label id="loginLabel" runat="server">Логин</asp:Label>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="textLogin" ErrorMessage="Введите логин" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:TextBox id="textLogin" runat="server" style="color: black" CausesValidation="True"/>
                     <asp:Label id="passwordLabel" runat="server">Пароль</asp:Label><asp:TextBox ID="textPass" type="password" runat="server" style="color: black" CausesValidation="True"/>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="textPass" ErrorMessage="Введите пароль" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" Text="Войти" OnClick="loginSubmit"/>
                     <a href="#">Зарегистрироваться</a>
                 </form>
