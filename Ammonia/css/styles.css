@@ -1,3 +1,18 @@
 ﻿.bordered {
     border: 1px solid white;
 }
+
+.nav-element {
+    border: 1px solid white;
+    padding: 2px;
+    height: 5em;
+    font-weight: bold;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.no-padding {
+    padding: 0;
+}

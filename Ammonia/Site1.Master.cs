@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Web.UI;
 
 namespace Ammonia
@@ -12,34 +10,32 @@ namespace Ammonia
 
         }
 
-        // ReSharper disable once InconsistentNaming
-        protected void loginSubmit(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            if(!Page.IsValid)return;
-            try
-            {
-                var conn =
-                new SqlConnection(ConfigurationManager.ConnectionStrings["UsersConnectionString"].ConnectionString);
-                conn.Open();
-                var finduser = "SELECT count(*) FROM [Table] WHERE Username = '" + textLogin.Text + "' AND Password = '" +
-                           textPass.Text + "'";
-                var comm = new SqlCommand(finduser, conn);
-                var temp = Convert.ToInt32(comm.ExecuteScalar().ToString());
-                conn.Close();
-                if (temp == 1)
-                {
-                    Session["CurrentUser"] = textLogin.Text;
-                    Response.Redirect("index.aspx");
-                }
-                else
-                {
-                    Response.Write("Bad Credentials");
-                }
-            }
-            catch (Exception ex)
-            {
-                Response.Write("Error Occured: " + ex);
-            }
+            Response.Redirect("index.aspx");
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("discography.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Calendar.aspx");
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("aboutUs.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("photoVideo.aspx");
+        }
+
+        // ReSharper disable once InconsistentNaming
+
     }
 }

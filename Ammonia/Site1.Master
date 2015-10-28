@@ -17,37 +17,28 @@
     </asp:ContentPlaceHolder>
 </head>
 <body style="background-color: #708090">
-    <div class="container" style="background-color: black; color: white">
+<form runat="server" id="masterForm">
+    <div class="container" style="background-color: black; color: white;">
         <header class="row bordered">
             <div class="col-md-2 invisible">a</div>
             <h1 class="col-md-8 text-center">Сайт группы "Аммиак-34"</h1>
-            <div class="col-md-2 bordered">
-                <form id="logInForm" runat="server" method="post">
-                    <asp:ScriptManager ID="sm1" runat="server">
-                        <Scripts>
-                        <asp:ScriptReference Name="jquery"/>
-                        </Scripts>
-                    </asp:ScriptManager>
-                    <asp:Label ID="accInfo" runat="server" Visible="False">%user</asp:Label><br/>
-                    <asp:Label id="loginLabel" runat="server">Логин</asp:Label>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="textLogin" ErrorMessage="Введите логин" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <asp:TextBox id="textLogin" runat="server" style="color: black" CausesValidation="True"/>
-                    <asp:Label id="passwordLabel" runat="server">Пароль</asp:Label><asp:TextBox ID="textPass" type="password" runat="server" style="color: black" CausesValidation="True"/>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="textPass" ErrorMessage="Введите пароль" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" Text="Войти" OnClick="loginSubmit"/>
-                    <a href="#">Зарегистрироваться</a>
-                </form>
-            </div>
         </header>
-        <div class="row">
-        <nav class="col-md-4 text-center bordered">a</nav>
-        <article class="col-md-8 text-center bordered">
+        <div class="row bordered">
+        <nav class="col-md-4 text-center bordered" style="padding: 0">
+           <asp:Button ID="Button1" runat="server" ForeColor="Black" Text="Главная" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button1_Click" style="height: 3em; font-weight: bold;" />
+            <asp:Button ID="Button2" runat="server" ForeColor="Black" Text="Дискография" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button2_Click" style="height: 3em; font-weight: bold;" />
+            <asp:Button ID="Button3" runat="server" ForeColor="Black" Text="Календарь" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button3_Click" style="height: 3em; font-weight: bold;" />
+            <asp:Button ID="Button4" runat="server" ForeColor="Black" Text="О Нас" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button4_Click" style="height: 3em; font-weight: bold;" />
+            <asp:Button ID="Button5" runat="server" ForeColor="Black" Text="Фото/Видео" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button5_Click" style="height: 3em; font-weight: bold;" />
+        </nav>
+        <article class="col-md-8 text-center bordered" style="padding: 0">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
         </article>
         </div>
-        <footer class="text-center bordered">Footer</footer>
+        <footer class="text-center bordered row" style="padding: 0">Footer</footer>
     </div>
+    </form>
 </body>
 </html>

@@ -10,15 +10,15 @@
 namespace Ammonia {
     
     
-    public partial class Index {
+    public partial class Discography {
         
         /// <summary>
-        /// newsSpace control.
+        /// discoSpace control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel newsSpace;
+        protected global::System.Web.UI.WebControls.Panel discoSpace;
     }
 }

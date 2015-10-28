@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Ammonia.Site1" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Аммиак-34</title>
+    <meta charset="utf-8"/>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/styles.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color: #708090">
+    <div class="container" style="background-color: black; color: white">
+        <header class="row bordered">
+            <div class="col-md-2 invisible">a</div>
+            <h1 class="col-md-8 text-center">Сайт группы "Аммиак-34"</h1>
+        </header>
+        <div class="row bordered">
+        <nav class="col-md-4 text-center bordered">
+            a
+        </nav>
+        <article class="col-md-8 text-center bordered">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        </article>
+        </div>
+        <footer class="text-center bordered">Footer</footer>
+    </div>
+</body>
+</html>
