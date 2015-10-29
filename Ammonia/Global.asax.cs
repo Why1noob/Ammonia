@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
 
 namespace Ammonia
 {
@@ -45,6 +47,42 @@ namespace Ammonia
         protected void Application_End(object sender, EventArgs e)
         {
 
+        }
+
+        public static Panel CreateNewPanel(string cssClass, string id, string innerText, string styleProperty, string styleValue)
+        {
+            var newPanel = new Panel {CssClass = cssClass, ID = id};
+            newPanel.Controls.Add(new LiteralControl(innerText));
+            if(!string.IsNullOrEmpty(styleProperty))
+            newPanel.Style.Add(styleProperty,styleValue);
+            return newPanel;
+        }
+
+        public static HtmlGenericControl CreateNewHtmlControl(string tag, string cssClass, string id, string innerText,
+            string styleProperty, string styleValue)
+        {
+            var newHtmlControl = new HtmlGenericControl(tag) {InnerHtml = innerText, ID = id};
+            newHtmlControl.Attributes["class"] = cssClass;
+            if(!string.IsNullOrEmpty(styleProperty))
+                newHtmlControl.Attributes.Add(styleProperty,styleValue);
+            return newHtmlControl;
+        }
+
+        public static void AddChild(Panel parent, Panel child)
+        {
+            parent.Controls.Add(child);
+        }
+        public static void AddChild(HtmlGenericControl parent, Panel child)
+        {
+            parent.Controls.Add(child);
+        }
+        public static void AddChild(Panel parent, HtmlGenericControl child)
+        {
+            parent.Controls.Add(child);
+        }
+        public static void AddChild(HtmlGenericControl parent, HtmlGenericControl child)
+        {
+            parent.Controls.Add(child);
         }
     }
 }
