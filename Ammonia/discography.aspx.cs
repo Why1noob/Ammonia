@@ -22,10 +22,10 @@ namespace Ammonia
             while (reader.Read())
             {
                 var yearStr = reader.GetInt32(0).ToString().Trim();
-                var yearPanel = Global.CreateNewPanel("row bordred", "yearPanel" + yearStr, "", null, "");
+                var yearPanel = Global.CreateNewPanel("col-md-12 bordred", "yearPanel" + yearStr, "", null, "");
                 Global.AddChild(discoSpace,yearPanel);
-                var yearHeader = Global.CreateNewHtmlControl("h3", "col-md-12 text-left", "yearHeader" + yearStr, yearStr, "margin",
-                    "0");
+                var yearHeader = Global.CreateNewHtmlControl("h3", "col-md-12 text-left", "yearHeader" + yearStr, yearStr, "style",
+                    "margin:0; padding:0;");
                 Global.AddChild(yearPanel,yearHeader);
                 var selectAlbums = "SELECT DISTINCT Album,Cover FROM Songs WHERE Year = '" + yearStr + "'";
                 var selectAlbumsCom = new SqlCommand(selectAlbums,con2);
@@ -36,11 +36,11 @@ namespace Ammonia
                     var albumCOverStr = selectAlbumsReader.GetString(1).Trim();
                     var albomCoverNPanel = Global.CreateNewPanel("row bordered", albumName + "CoverNPanel", "", null, "");
                     Global.AddChild(yearPanel,albomCoverNPanel);
-                    var albumCover = Global.CreateNewHtmlControl("img", "col-md-4", albumName + "Cover", "", "src",
+                    var albumCover = Global.CreateNewHtmlControl("img", "col-md-4 bordered", albumName + "Cover", "", "src",
                         albumCOverStr);
                     Global.AddChild(albomCoverNPanel,albumCover);
                     var albumPanelGroup = Global.CreateNewHtmlControl("div", "panel-group col-md-8", albumName + "PanelGroup",
-                        "", null, "");
+                        "", "style", "padding:0;");
                     Global.AddChild(albomCoverNPanel,albumPanelGroup);
                     var albumPanel = Global.CreateNewHtmlControl("div", "panel panel-default", albumName + "Panel", "",
                         null, "");
@@ -53,7 +53,7 @@ namespace Ammonia
                     Global.AddChild(albumPanelHeader,albumPanelTitle);
                     var albumExpand = Global.CreateNewHtmlControl("a", "text-left", albumName + "expand", albumName,null,"");
                     albumExpand.Attributes.Add("data-toggle","collapse");
-                    albumExpand.Attributes.Add("href=","#ContentPlaceHolder1_"+albumName+"Collapse");
+                    albumExpand.Attributes.Add("href=", "#ContentPlaceHolder1_" + albumName + "Collapse");
                     Global.AddChild(albumPanelTitle,albumExpand);
                     var albumCollapse = Global.CreateNewHtmlControl("div", "panel-collapse collapse",
                         albumName + "Collapse", "", null, "");
@@ -69,7 +69,6 @@ namespace Ammonia
                         Global.AddChild(albumCollapse,songsPanel);
                     }
                 }
-                // yearsTxt.Add(yearStr);
             }
             con.Close();
             con2.Close();
