@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="aboutUs.aspx.cs" Inherits="Ammonia.aboutUs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site1.Master" CodeBehind="aboutUs.aspx.cs" Inherits="Ammonia.aboutUs" %>
 
 <!DOCTYPE html>
 

@@ -38,6 +38,7 @@ namespace Ammonia
                     Global.AddChild(yearPanel,albomCoverNPanel);
                     var albumCover = Global.CreateNewHtmlControl("img", "col-md-4 bordered", albumName + "Cover", "", "src",
                         albumCOverStr);
+                    albumCover.Style.Add("padding", "0");
                     Global.AddChild(albomCoverNPanel,albumCover);
                     var albumPanelGroup = Global.CreateNewHtmlControl("div", "panel-group col-md-8", albumName + "PanelGroup",
                         "", "style", "padding:0;");
@@ -53,7 +54,7 @@ namespace Ammonia
                     Global.AddChild(albumPanelHeader,albumPanelTitle);
                     var albumExpand = Global.CreateNewHtmlControl("a", "text-left", albumName + "expand", albumName,null,"");
                     albumExpand.Attributes.Add("data-toggle","collapse");
-                    albumExpand.Attributes.Add("href=", "#ContentPlaceHolder1_" + albumName + "Collapse");
+                    albumExpand.Attributes.Add("href", "#ContentPlaceHolder1_" + albumName + "Collapse");
                     Global.AddChild(albumPanelTitle,albumExpand);
                     var albumCollapse = Global.CreateNewHtmlControl("div", "panel-collapse collapse",
                         albumName + "Collapse", "", null, "");
@@ -65,7 +66,7 @@ namespace Ammonia
                     {
                         var songName = selectSongsReader.GetString(0).Trim();
                         var songsPanel = Global.CreateNewHtmlControl("div", "panel-body", songName + "Panel", songName,
-                            null, "");
+                            "style", "color:black;");
                         Global.AddChild(albumCollapse,songsPanel);
                     }
                 }

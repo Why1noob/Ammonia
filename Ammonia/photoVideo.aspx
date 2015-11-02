@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="photoVideo.aspx.cs" Inherits="Ammonia.photoVideo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site1.Master" CodeBehind="photoVideo.aspx.cs" Inherits="Ammonia.photoVideo" %>
 
 <!DOCTYPE html>
 

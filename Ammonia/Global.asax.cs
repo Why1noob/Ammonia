@@ -11,11 +11,13 @@ namespace Ammonia
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            ScriptResourceDefinition myScriptResDef = new ScriptResourceDefinition();
-            myScriptResDef.Path = "~/Scripts/jquery-1.4.2.min.js";
-            myScriptResDef.DebugPath = "~/Scripts/jquery-1.4.2.js";
-            myScriptResDef.CdnPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js";
-            myScriptResDef.CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js";
+            ScriptResourceDefinition myScriptResDef = new ScriptResourceDefinition
+            {
+                Path = "~/Scripts/jquery-1.4.2.min.js",
+                DebugPath = "~/Scripts/jquery-1.4.2.js",
+                CdnPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js",
+                CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js"
+            };
             ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
         }
 
