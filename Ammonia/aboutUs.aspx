@@ -1,16 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site1.Master" CodeBehind="aboutUs.aspx.cs" Inherits="Ammonia.aboutUs" %>
+﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site1.Master" CodeBehind="aboutUs.aspx.cs" Inherits="Ammonia.aboutUs" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h2 class="bordered" style="color: red">Календарь мероприятий</h2>
+    <asp:Panel runat="server" ID="AboutUsPanel" CssClass="bordered col-md-12">Хз что тут писать</asp:Panel>
+</asp:Content>

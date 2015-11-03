@@ -22,12 +22,30 @@ namespace Ammonia {
         protected global::System.Web.UI.WebControls.Calendar Calendar1;
         
         /// <summary>
-        /// EventDescription control.
+        /// EventDescriptionFull control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel EventDescription;
+        protected global::System.Web.UI.WebControls.Panel EventDescriptionFull;
+        
+        /// <summary>
+        /// EventHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel EventHeader;
+        
+        /// <summary>
+        /// EventDiscription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel EventDiscription;
     }
 }
