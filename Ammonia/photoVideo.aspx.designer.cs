@@ -10,6 +10,33 @@
 namespace Ammonia {
     
     
-    public partial class photoVideo {
+    public partial class PhotoVideo {
+        
+        /// <summary>
+        /// PhotoVideoMainPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PhotoVideoMainPanel;
+        
+        /// <summary>
+        /// EnlargedPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel EnlargedPanel;
+        
+        /// <summary>
+        /// CollectionPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel CollectionPanel;
     }
 }
