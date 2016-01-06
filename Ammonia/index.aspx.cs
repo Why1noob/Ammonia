@@ -44,7 +44,8 @@ namespace Ammonia
             var newsTitNText = Global.CreateNewPanel("col-md-9", "newsTitText" + counter, "", "padding", "0");
             Global.AddChild(newsPanel,newsTitNText);
             var newsTitle = Global.CreateNewHtmlControl("h3", "bordered", "newsTitle" + counter, newReader.GetString(1),
-                "margin", "0");
+                null, null);
+            newsTitle.Style.Add("margin-top", "0");
             Global.AddChild(newsTitNText,newsTitle);
             var newsText = Global.CreateNewPanel("text-left", "newsText" + counter, newReader.GetString(2),
                 "text-indent", "3em");

@@ -29,7 +29,7 @@
             <asp:Button ID="Button2" runat="server" ForeColor="Black" Text="Дискография" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button2_Click" style="height: 3em; font-weight: bold;" />
             <asp:Button ID="Button3" runat="server" ForeColor="Black" Text="Календарь" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button3_Click" style="height: 3em; font-weight: bold;" />
             <asp:Button ID="Button4" runat="server" ForeColor="Black" Text="О Нас" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button4_Click" style="height: 3em; font-weight: bold;" />
-            <asp:Button ID="Button5" runat="server" ForeColor="Black" Text="Фото/Видео" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button5_Click" style="height: 3em; font-weight: bold;" />
+            <asp:Button ID="Button5" runat="server" ForeColor="Black" Text="Фото" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button5_Click" style="height: 3em; font-weight: bold;" />
         </nav>
         <article class="col-md-8 text-center bordered" style="padding: 0">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
