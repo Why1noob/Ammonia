@@ -60,13 +60,20 @@ namespace Ammonia
             return newPanel;
         }
 
+        public static Panel CreateNewPanel(string cssClass, string id, string innerText)
+        {
+            var newPanel = new Panel { CssClass = cssClass, ID = id };
+            newPanel.Controls.Add(new LiteralControl(innerText));
+            return newPanel;
+        }
+
         public static HtmlGenericControl CreateNewHtmlControl(string tag, string cssClass, string id, string innerText,
-            string styleProperty, string styleValue)
+            string attrProperty, string attrValue)
         {
             var newHtmlControl = new HtmlGenericControl(tag) {InnerHtml = innerText, ID = id};
             newHtmlControl.Attributes["class"] = cssClass;
-            if(!string.IsNullOrEmpty(styleProperty))
-                newHtmlControl.Attributes.Add(styleProperty,styleValue);
+            if(!string.IsNullOrEmpty(attrProperty))
+                newHtmlControl.Attributes.Add(attrProperty,attrValue);
             return newHtmlControl;
         }
 

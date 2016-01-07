@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
 
 
 namespace Ammonia
@@ -30,6 +32,7 @@ namespace Ammonia
         {
             _allPhotos = Load_Images();
             SetViewedImage(CurrentImgId);
+            ParseCollection();
         }
 
         protected void SetViewedImage(int imgId)
@@ -77,6 +80,31 @@ namespace Ammonia
             {
                 SetViewedImage(++CurrentImgId);
             }
+        }
+        protected void ParseCollection()
+        {
+            var counter = 1;
+            var currentRow = CurrentRow(counter);
+            foreach (var photo in _allPhotos)
+            {
+                if (counter%4 == 0)
+                {
+                    CurrentRow(counter);
+                }
+                var currentImg = Global.CreateNewHtmlControl("img", "col-md-3 bordered", "photo" + counter, "", "src", photo.ImgLink);
+                currentImg.Attributes.Add("alt",photo.ImgAlt);
+                currentImg.Attributes.Add("height","10%");
+                currentImg.Style.Add("padding","0");
+                Global.AddChild(currentRow,currentImg);
+                counter++;
+            }
+        }
+
+        private Panel CurrentRow(int counter)
+        {
+            var currentRow = Global.CreateNewPanel("col-md-12", "collectionRow" + counter/4, "","padding","0");
+            Global.AddChild(CollectionPanel, currentRow);
+            return currentRow;
         }
     }
 }
