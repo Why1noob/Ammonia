@@ -12,6 +12,7 @@ namespace Ammonia
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ClientScript.GetPostBackEventReference(this, string.Empty);
             var con = new SqlConnection(ConfigurationManager.ConnectionStrings["AmmConnectionString"].ConnectionString);
             con.Open();
             const string visibleNewsQuery = "SELECT * FROM News WHERE State = 'Visible'";

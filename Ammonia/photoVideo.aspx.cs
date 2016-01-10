@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 
@@ -30,9 +29,11 @@ namespace Ammonia
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            ClientScript.GetPostBackEventReference(this, string.Empty);
             _allPhotos = Load_Images();
-            SetViewedImage(CurrentImgId);
             ParseCollection();
+            if (Page.IsPostBack) return;
+            SetViewedImage(CurrentImgId); 
         }
 
         protected void SetViewedImage(int imgId)
@@ -95,6 +96,7 @@ namespace Ammonia
                 currentImg.Attributes.Add("alt",photo.ImgAlt);
                 currentImg.Attributes.Add("height","10%");
                 currentImg.Style.Add("padding","0");
+                currentImg.Attributes.Add("onclick", "clickFromFrontEnd(this)");
                 Global.AddChild(currentRow,currentImg);
                 counter++;
             }
@@ -105,6 +107,14 @@ namespace Ammonia
             var currentRow = Global.CreateNewPanel("col-md-12", "collectionRow" + counter/4, "","padding","0");
             Global.AddChild(CollectionPanel, currentRow);
             return currentRow;
+        }
+
+
+
+        protected void Unnamed5_Click(object sender, EventArgs e)
+        {
+            var argument = Request.Form["__EVENTARGUMENT"];
+            SetViewedImage(CurrentImgId = Convert.ToInt32(argument.Substring(0, 5)));
         }
     }
 }
