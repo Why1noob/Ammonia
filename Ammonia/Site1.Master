@@ -16,29 +16,39 @@
         
     </asp:ContentPlaceHolder>
 </head>
-<body style="background-color: #708090">
+<body style="background-color: #708090" data-spy="scroll" data-target="myScroll">
 <form runat="server" id="masterForm">
     <div class="container" style="background-color: black; color: white;">
-        <header class="row bordered">
+        <div class="row bordered">
             <div class="col-md-2 invisible">a</div>
             <h1 class="col-md-8 text-center">Сайт группы "Аммиак-34"</h1>
-        </header>
+        </div>
         <div class="row bordered">
-        <nav class="col-md-4 text-center bordered" style="padding: 0">
+        <div class="col-md-4 text-center navbar navbar-default" id="myScroll" style="padding: 0;" role="navigation">
            <asp:Button ID="Button1" runat="server" ForeColor="Black" Text="Главная" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button1_Click" style="height: 3em; font-weight: bold;" />
             <asp:Button ID="Button2" runat="server" ForeColor="Black" Text="Дискография" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button2_Click" style="height: 3em; font-weight: bold;" />
             <asp:Button ID="Button3" runat="server" ForeColor="Black" Text="Календарь" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button3_Click" style="height: 3em; font-weight: bold;" />
             <asp:Button ID="Button4" runat="server" ForeColor="Black" Text="О Нас" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button4_Click" style="height: 3em; font-weight: bold;" />
             <asp:Button ID="Button5" runat="server" ForeColor="Black" Text="Фото" CssClass="col-md-12 nav-element btn btn-primary" OnClick="Button5_Click" style="height: 3em; font-weight: bold;" />
-        </nav>
-        <article class="col-md-8 text-center bordered" style="padding: 0">
+        </div>
+        <div class="col-md-8 text-center bordered" style="padding: 0;">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
-        </article>
         </div>
-        <footer class="text-center bordered row" style="padding: 0">Footer</footer>
+        </div>
+        <div class="text-center bordered row" style="padding: 0">Footer</div>
     </div>
     </form>
+    <script>
+        $(document).ready(function () {
+
+            $(window).scroll(function () {
+                document.getElementById('myScroll').style.top = $(window).scrollTop()+'px';
+                console.log($(window).scrollTop());
+                console.log($('#myScroll').top);
+            });
+        });
+    </script>
 </body>
 </html>

@@ -19,15 +19,14 @@
         <asp:Panel runat="server" CssClass="col-md-12 bordered" ID="CollectionPanel" style="padding: 0;">
             
         </asp:Panel>
-        <asp:Button runat="server" Visible="False" ID="previewClicker" Text="" OnClick="Unnamed5_Click"/>
-        <asp:LinkButton ID="LinkButton1" runat="server" Visible="False">LinkButton</asp:LinkButton>
-    </asp:Panel>
+        <asp:ScriptManager runat="server" ID="previewClickHandler" EnablePageMethods="True" EnablePartialRendering="true"></asp:ScriptManager>
+    </asp:Panel>     
     <script>
-        function clickFromFrontEnd(item) {
-            var val = $(item).attr('id').toString();
-            console.log(val);
-            window.__doPostBack('<%= previewClicker.ID %>', val);
-            $("#prviewClicker").click();
+        function highlightedBorders(x) {
+            x.style.borderColor = "blue";
+        }
+        function normalBorders(x) {
+            x.style.borderColor = "white";
         }
     </script>
 </asp:Content>

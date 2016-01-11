@@ -12,13 +12,11 @@ namespace Ammonia
     {
         protected struct Photo
         {
-            int _innerId;
             public string ImgLink { get; private set; }
             public string ImgAlt { get; private set; }
 
-            public Photo(int innerId, string imgLink, string imgAlt) : this()
+            public Photo(string imgLink, string imgAlt) : this()
             {
-                _innerId = innerId;
                 ImgLink = imgLink;
                 ImgAlt = imgAlt;
             }
@@ -52,7 +50,7 @@ namespace Ammonia
             var reader = com.ExecuteReader();
             while (reader.Read())
             {
-                result.Add(new Photo(reader.GetInt32(0),reader.GetString(1).Trim(),reader.GetString(2).Trim()));
+                result.Add(new Photo(reader.GetString(1).Trim(),reader.GetString(2).Trim()));
             }
             reader.Close();
             con.Close();
@@ -92,11 +90,13 @@ namespace Ammonia
                 {
                     CurrentRow(counter);
                 }
-                var currentImg = Global.CreateNewHtmlControl("img", "col-md-3 bordered", "photo" + counter, "", "src", photo.ImgLink);
-                currentImg.Attributes.Add("alt",photo.ImgAlt);
-                currentImg.Attributes.Add("height","10%");
-                currentImg.Style.Add("padding","0");
-                currentImg.Attributes.Add("onclick", "clickFromFrontEnd(this)");
+                var currentImg = Global.CreateNewImage("col-md-3 btn bordered", "photo" + (counter-1), photo.ImgLink,
+                    photo.ImgAlt, new[] { "height", "padding", "onmouseover", "onmouseout" }, new[] { "10%", "0", "highlightedBorders(this)", "normalBorders(this)" });
+                currentImg.Click += (s, e) =>
+                {
+                    var btn = (ImageButton)s;
+                    SetViewedImage(Convert.ToInt32(btn.ID.Substring(5)));
+                };
                 Global.AddChild(currentRow,currentImg);
                 counter++;
             }
@@ -107,14 +107,6 @@ namespace Ammonia
             var currentRow = Global.CreateNewPanel("col-md-12", "collectionRow" + counter/4, "","padding","0");
             Global.AddChild(CollectionPanel, currentRow);
             return currentRow;
-        }
-
-
-
-        protected void Unnamed5_Click(object sender, EventArgs e)
-        {
-            var argument = Request.Form["__EVENTARGUMENT"];
-            SetViewedImage(CurrentImgId = Convert.ToInt32(argument.Substring(0, 5)));
         }
     }
 }
