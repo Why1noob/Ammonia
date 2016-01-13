@@ -6,7 +6,7 @@ using System.Web.UI;
 
 namespace Ammonia
 {
-    public partial class AdminNews : Page
+    public partial class News : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,7 +26,7 @@ namespace Ammonia
                 var con =
                     new SqlConnection(ConfigurationManager.ConnectionStrings["AmmConnectionString"].ConnectionString);
                 con.Open();
-                var updateQuery = "INSERT INTO News (Title,Text,Picture,Date) VALUES ('"+ txtTitle.Text + "','" +
+                var updateQuery = "INSERT INTO News (Title,Text,Picture,Date) VALUES (N'"+ txtTitle.Text + "',N'" +
                                   txtText.Text +
                                   "','" + txtPicture.Text + "',GETDATE())";
                 var com = new SqlCommand(updateQuery, con);

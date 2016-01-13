@@ -10,7 +10,7 @@
 namespace Ammonia {
     
     
-    public partial class AdminNews {
+    public partial class News {
         
         /// <summary>
         /// AdmNewsPanel control.

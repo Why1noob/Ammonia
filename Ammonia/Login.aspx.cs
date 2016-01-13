@@ -21,7 +21,7 @@ namespace Ammonia
             //there will be check for ip
             if(Session["isAdmin"]==null)return;
             if(!(bool)Session["isAdmin"]) return;
-           Response.Redirect("AdminNews.aspx");
+           Response.Redirect("Admin\\News.aspx");
         }
 
         protected void Button6_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace Ammonia
            // if(TextBox1.Text != (Firp +22)*10+ConfigurationManager.AppSettings["Secp"]+Thip+Foup+((3+3+3)*3)+ConfigurationManager.AppSettings["Fifp"])
            // {TextBox1.Text = ""; return;}
             Session["isAdmin"] = true;
-            Response.Redirect("AdminNews.aspx");
+            Response.Redirect("Admin\\News.aspx");
         }
     }
 }

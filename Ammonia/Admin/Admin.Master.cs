@@ -1,7 +1,6 @@
 ﻿using System;
 
-
-namespace Ammonia
+namespace Ammonia.Admin
 {
     public partial class Admin1 : System.Web.UI.MasterPage
     {

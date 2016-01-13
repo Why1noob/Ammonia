@@ -58,7 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="aboutUs.aspx" />
-    <Content Include="AdminNews.aspx" />
+    <Content Include="Admin\News.aspx" />
+    <Content Include="Admin\Schedule.aspx" />
     <Content Include="App_Data\AmmoniaDB.mdf" />
     <Content Include="App_Data\AmmoniaDB_log.ldf">
       <DependentUpon>AmmoniaDB.mdf</DependentUpon>
@@ -80,19 +81,26 @@
     <Compile Include="aboutUs.aspx.designer.cs">
       <DependentUpon>aboutUs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin.Master.cs">
+    <Compile Include="Admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin.Master.designer.cs">
+    <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="AdminNews.aspx.cs">
-      <DependentUpon>AdminNews.aspx</DependentUpon>
+    <Compile Include="Admin\News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminNews.aspx.designer.cs">
-      <DependentUpon>AdminNews.aspx</DependentUpon>
+    <Compile Include="Admin\News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Schedule.aspx.cs">
+      <DependentUpon>Schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Schedule.aspx.designer.cs">
+      <DependentUpon>Schedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="Calendar.aspx.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>
@@ -146,7 +154,7 @@
     <Content Include="App_Browsers\ie.browser" />
     <Content Include="App_Browsers\firefox.browser" />
     <Content Include="packages.config" />
-    <Content Include="Admin.Master" />
+    <Content Include="Admin\Admin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
