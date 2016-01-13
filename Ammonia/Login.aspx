@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label ID="Label1" runat="server" Text="Пароль"></asp:Label>
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TextBox1" runat="server" CausesValidation="True" type="password" ClientIDMode="Predictable" ForeColor="#333333"></asp:TextBox>
     <asp:Button ID="Button6" runat="server" ForeColor="Black" OnClick="Button6_Click" Text="Войти" />
     <br />
 </asp:Content>

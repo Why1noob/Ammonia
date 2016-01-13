@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Ammonia.Admin1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <title>Панель управления</title>
+    <asp:ContentPlaceHolder ID="headPH" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <header><h1>Панель управления</h1></header>
+        <nav><ul class="list-group">
+            <li class="list-group-item">
+                <a href="AdminNews.aspx">Новости</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Календарь</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Дискография</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">О нас</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Фото</a>
+            </li>
+            <li>
+                
+                <asp:Button ID="Button1" runat="server" Text="Выйти" CssClass="btn btn-danger" OnClick="Button1_Click" ForeColor="Black" />
+                
+            </li>
+        </ul> </nav>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderA" runat="server">
+                        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

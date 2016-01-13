@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Web;
 using System.Web.UI;
 
 
@@ -13,15 +14,23 @@ namespace Ammonia
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           if(!(bool)Session["isAdmin"]) return;
-           Response.Redirect("Admin.aspx");
+            if (HttpContext.Current.Request.UserHostAddress != null)
+            {
+                var ip = HttpContext.Current.Request.UserHostAddress;
+            }
+            //there will be check for ip
+            if(Session["isAdmin"]==null)return;
+            if(!(bool)Session["isAdmin"]) return;
+           Response.Redirect("AdminNews.aspx");
         }
 
         protected void Button6_Click(object sender, EventArgs e)
         {
-            if(TextBox1.Text != Firp +11.ToString()+ConfigurationManager.AppSettings["Secp"]+Thip+Foup+((3+3+3)*3)+ConfigurationManager.AppSettings["Fifp"])return;
+            if(TextBox1.Text != "1") return;
+           // if(TextBox1.Text != (Firp +22)*10+ConfigurationManager.AppSettings["Secp"]+Thip+Foup+((3+3+3)*3)+ConfigurationManager.AppSettings["Fifp"])
+           // {TextBox1.Text = ""; return;}
             Session["isAdmin"] = true;
-            Response.Redirect("Admin.aspx");
+            Response.Redirect("AdminNews.aspx");
         }
     }
 }
