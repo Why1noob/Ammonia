@@ -5,6 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <title>Панель управления</title>
     <asp:ContentPlaceHolder ID="headPH" runat="server">
     </asp:ContentPlaceHolder>
@@ -21,7 +23,7 @@
                 <a href="Schedule.aspx">Календарь</a>
             </li>
             <li class="list-group-item">
-                <a href="#">Дискография</a>
+                <a href="Disco.aspx">Дискография</a>
             </li>
             <li class="list-group-item">
                 <a href="#">О нас</a>

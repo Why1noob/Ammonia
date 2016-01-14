@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="aboutUs.aspx" />
+    <Content Include="Admin\Disco.aspx" />
     <Content Include="Admin\News.aspx" />
     <Content Include="Admin\Schedule.aspx" />
     <Content Include="App_Data\AmmoniaDB.mdf" />
@@ -87,6 +88,13 @@
     </Compile>
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Disco.aspx.cs">
+      <DependentUpon>Disco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Disco.aspx.designer.cs">
+      <DependentUpon>Disco.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\News.aspx.cs">
       <DependentUpon>News.aspx</DependentUpon>

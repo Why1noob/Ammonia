@@ -124,5 +124,22 @@ namespace Ammonia
             var newImage = new ImageButton { CssClass = cssClass, ID = id, ImageUrl = src };
             return newImage;
         }
+        public static LinkButton CreateNewLButton(string cssClass, string id, string text, string[] attrs, string[] values)
+        {
+            var newButton = new LinkButton { CssClass = cssClass, ID = id, Text = text};
+            var c = 0;
+            foreach (var attr in attrs)
+            {
+                newButton.Attributes.Add(attr, values[c++]);
+            }
+            return newButton;
+        }
+
+        public static LinkButton CreateNewLButton(string cssClass, string id, string text)
+        {
+            var newButton = new LinkButton { CssClass = cssClass, ID = id, Text = text};
+            return newButton;
+        }
+
     }
 }

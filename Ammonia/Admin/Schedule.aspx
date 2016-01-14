@@ -22,7 +22,7 @@
             <SortedDescendingHeaderStyle BackColor="#000065" />
         </asp:GridView>
     </asp:Panel>
-    <asp:Panel runat="server" CssClass="row">
+    <asp:Panel runat="server" style="padding-left: 10px;">
         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
             <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
             <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
@@ -33,9 +33,18 @@
             <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
             <WeekendDayStyle BackColor="#CCCCFF" />
         </asp:Calendar>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
+            </ContentTemplate>
+        </asp:UpdatePanel>
         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Создать" />
     </asp:Panel>
+    <asp:Timer ID="Timer1" runat="server" Interval="5000" OnTick="Timer1_Tick">
+    </asp:Timer>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AmmConnectionString %>" SelectCommand="SELECT * FROM [Events]" UpdateCommand="UPDATE [Events] Set [Date]=CONVERT(Datetime,@Date,104), [Name]=@Name, [Description]=@Description Where [Id]=@Id" DeleteCommand="DELETE from [Events] Where [Id]=@Id"></asp:SqlDataSource>
 </asp:Content>
