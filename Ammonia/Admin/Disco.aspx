@@ -15,6 +15,22 @@
                 </asp:Panel>
             </div>
         </div>
-        <asp:Label runat="server" ID="DebugLabel"></asp:Label>
     </div>
+    <asp:Panel runat="server" ID="songsPanel">
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <div class="panel-group col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#ContentPlaceHolderA_collapseSongs">Песни</a>
+                    </h4>
+                </div>
+                <asp:Panel runat="server" ID="collapseSongs" CssClass="panel-collapse collapse">
+                    
+                </asp:Panel>
+            </div>
+        </div>
+    </asp:Panel>
+    <asp:Label runat="server" ID="DebugLabel"></asp:Label>
 </asp:Content>

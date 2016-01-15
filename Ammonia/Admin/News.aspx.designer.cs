@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ammonia {
+namespace Ammonia.Admin {
     
     
     public partial class News {

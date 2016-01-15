@@ -3,8 +3,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.UI;
 
-
-namespace Ammonia
+namespace Ammonia.Admin
 {
     public partial class News : Page
     {

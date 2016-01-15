@@ -140,6 +140,20 @@ namespace Ammonia
             var newButton = new LinkButton { CssClass = cssClass, ID = id, Text = text};
             return newButton;
         }
-
+        public static TextBox CreateNewTextBox(string cssClass, string id, string text)
+        {
+            var newTextBox = new TextBox() { CssClass = cssClass, ID = id, Text = text };
+            return newTextBox;
+        }
+        public static TextBox CreateNewTextBox(string cssClass, string id, string text, string[] attrs, string[] values)
+        {
+            var newTextBox = new TextBox() { CssClass = cssClass, ID = id, Text = text };
+            var c = 0;
+            foreach (var attr in attrs)
+            {
+                newTextBox.Attributes.Add(attr, values[c++]);
+            }
+            return newTextBox;
+        }
     }
 }
